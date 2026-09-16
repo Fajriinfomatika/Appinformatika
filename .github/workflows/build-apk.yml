@@ -1,4 +1,4 @@
-name: Kalkulator by Fajri informatika APK
+name: Build APK
 
 on:
   push:
@@ -24,14 +24,13 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Prepare Web Directory
+        run: |
+          mkdir -p www
+          cp index.html www/ 2>/dev/null || true
+
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
-
-      - name: Initialize Capacitor Config if missing
-        run: |
-          if [ ! -f capacitor.config.json ] && [ ! -f capacitor.config.ts ]; then
-            npx cap init Appinformatika com.fajri.appinformatika --web-dir .
-          fi
 
       - name: Add & Sync Android
         run: |

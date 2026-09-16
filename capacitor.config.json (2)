@@ -1,0 +1,6 @@
+{
+  "appId": "com.fajri.appinformatika",
+  "appName": "Appinformatika",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
